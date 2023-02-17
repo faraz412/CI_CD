@@ -1,1 +1,32 @@
+# title: Website Name
+# description: A website for uploading content
+# no: 1
 
+# tags:
+# - technology
+# - images
+# - creative
+
+# address:
+#  street: MG road
+#  city: Bangalore
+#  state: KA
+
+# value: ${{env.VALUE}}
+# variable: ${{github.VARIABLE_NAME}}
+
+name: Github action
+on:
+ push:
+  branches: [master]
+ jobs:
+  build:
+   runs-on: ubuntu-latest
+   steps:
+    -uses: actions/checkout@v3
+    -name: Print node version
+     run: node --version
+    -name: Print npm version
+     run: npm --version
+    -name: Print pwd
+     run: pwd
